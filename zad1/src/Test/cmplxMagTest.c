@@ -16,17 +16,18 @@ int main () {
 	getTestDataFromFile(testData);
 	
 	for (i=0;i<10;i++) {
-		printf("Testing for %d. data point...", i+1);
+		printf("\nTesting for %d. data point...", i+1);
 		z1[REAL] = testData[i].real;
 		z1[IMAG] = testData[i].imag;
-		if(cmplx_mag(z1) == sqrt(testData[i].imag))
-			printf("%d. test passed!", i+1);
+
+		if(cmplx_mag(z1) == sqrt(testData[i].squareAmp))
+			printf("\n%d. test passed!", i+1);
 		else {
 			printf("Test failed!");
 			return -1;
 		}
 	}
-	printf("Test was successful for all data points!");
+	printf("\nTest was successful for all data points!");
 	
 	return 0;
 }
