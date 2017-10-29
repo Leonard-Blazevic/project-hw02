@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<math.h>
 #include "../../inc/cmplx.h"
 #include "../../inc/testDataGetterFunctions.h"
@@ -16,17 +17,18 @@ int main () {
 	getTestDataFromFile(testData);
 	
 	for (i=0;i<10;i++) {
-		printf("Testing for %d. data point...", i+1);
+		printf("\nTesting for %d. data point...", i+1);
 		z1[REAL] = testData[i].real;
 		z1[IMAG] = testData[i].imag;
-		if(cmplx_phs(z1) == atan(testData[i].imag / testData[i].real))
-			printf("%d. test passed!", i+1);
+
+		if(abs(cmplx_phs(z1) - atan((double)testData[i].imag / (double)testData[i].real)) < 0.01)
+			printf("\n%d. test passed!", i+1);
 		else {
-			printf("Test failed!");
+			printf("\nTest failed!");
 			return -1;
 		}
 	}
-	printf("Test was successful for all data points!");
+	printf("\nTest was successful for all data points!");
 	
 	return 0;
 }
