@@ -12,7 +12,7 @@ int main (void) {
 
  value = read_half(file);
  fclose(file);
- printf("Read value: %h", value);
+ printf("Read value: %d", value);
  
  return 0;
 }

@@ -19,7 +19,7 @@ int main (void) {
  if(n<1)
    printf("Error!");
  
- printf("Written value: %h", check);
+ printf("Written value: %d", check);
 
  return 0;
 }
