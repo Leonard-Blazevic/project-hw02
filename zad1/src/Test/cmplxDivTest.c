@@ -25,7 +25,7 @@ int main () {
 		z2[REAL] = testData[N-1-i].real;
 		z2[IMAG] = testData[N-1-i].imag;
 		
-		cmplx_mul(z1, z2, z3);
+		cmplx_div(z1, z2, z3);
 		
 		temp = testData[N-1-i].real * testData[N-1-i].real + testData[N-1-i].imag * testData[N-1-i].imag;
 		

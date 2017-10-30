@@ -26,7 +26,7 @@ int main () {
 		
 		cmplx_mul(z1, z2, z3);
 		
-		if((z3[REAL] == (testData[i].real * testData[N-1-i].real - testData[i].imag; * testData[N-1-i].imag)) && (z3[IMAG] == (testData[i].imag * testData[N-1-i].real + testData[i].real * testData[N-1-i].imag)))
+		if((z3[REAL] == (testData[i].real * testData[N-1-i].real - testData[i].imag * testData[N-1-i].imag)) && (z3[IMAG] == (testData[i].imag * testData[N-1-i].real + testData[i].real * testData[N-1-i].imag)))
 			printf("\n%d. test passed!", i+1);
 		else {
 			printf("Test failed!");
