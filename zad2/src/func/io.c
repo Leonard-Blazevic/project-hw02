@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <io.h>
 
-int read_word(int fd) {
+int read_word(FILE *fd) {
  int result, n;
  
  n = fread(&result, sizeof(int), 1, fd);
@@ -12,7 +12,7 @@ int read_word(int fd) {
  return result;
 }
 
-short read_half(int fd) {
+short read_half(FILE *fd) {
  int n;
  short int result;
 
@@ -24,7 +24,7 @@ short read_half(int fd) {
  return result;
 }
 
-void write_word(int fd, int word) {
+void write_word(FILE *fd, int word) {
  int n;
 
  n = fwrite(&word, sizeof(word), 1, fd);
@@ -33,7 +33,7 @@ void write_word(int fd, int word) {
    printf("Writing word failed!");
 }
 
-void write_half(int fd, short word) {
+void write_half(FILE *fd, short word) {
  int n;
 
  n = fwrite(&word, sizeof(word), 1, fd);
