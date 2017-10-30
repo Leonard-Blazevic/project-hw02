@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "../../inc/io.h"
 
+#define VALUE 222
+
 int main (void) {
  FILE *file;
- short int value = 32;
- short int check = 0;
 
  file = fopen("file.bin", "wb+");
  
@@ -13,17 +13,10 @@ int main (void) {
  	return -1;
  }
 
- write_half(file, value);
- check = read_half(file);
- fclose(file);
-
- if(check != value) {
- 	printf("Error!");
- 	return -1;
- }
+ write_half(file, VALUE);
 
  printf("\nTest successful\n");
- printf("\nWritten value: %d\n", check);
+ printf("\nWritten value: %d\n", VALUE);
 
  return 0;
 }
