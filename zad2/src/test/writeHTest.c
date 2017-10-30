@@ -14,10 +14,10 @@ int main (void) {
  }
 
  write_half(file, value);
- fread(&check, sizeof(short), 1, file);
+ check = read_half(file);
  fclose(file);
 
- if(check == 0) {
+ if(check != value) {
  	printf("Error!");
  	return -1;
  }

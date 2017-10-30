@@ -14,10 +14,10 @@ int main (void) {
  }
 
  write_word(file, value);
- fread(&check, sizeof(int), 1, file);
+ check = read_word(file);
  fclose(file);
 
- if(check == 0) {
+ if(check != value) {
  	printf("Error!");
  	return -1;
  }
