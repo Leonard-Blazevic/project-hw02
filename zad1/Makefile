@@ -1,12 +1,20 @@
 FUNCSRC=$(wildcard src/Func/*c )
 TESTSRC=$(wildcard src/Test/*c )
 
-FUNCOBJ=$(patsubst %c, %o, $(FUNCSRC))
-TESTOBJ=$(patsubst %c, %o, $(TESTSRC))
+TEMP1=$(notdir $(FUNCSRC))
+TEMP2=$(notdir $(TESTSRC))
+
+TEMP11=$(patsubst %c, %o, $(TEMP1))
+TEMP22=$(patsubst %c, %o, $(TEMP2))
+
+FUNCOBJ=$(addprefix exe/, $(TEMP11))
+TESTOBJ=$(addprefix exe/, $(TEMP22))
 
 INC=inc/
 
-EXE=$(patsubst %c, %elf, $(TESTSRC))
+TEMPEXE=$(notdir $(TESTSRC))
+TEMPEXE1=$(patsubst %c, %o, $(TEMPEXE))
+EXE=$(addprefix exe/, $(TEMPEXE1))
 
 MAKE=make
 
