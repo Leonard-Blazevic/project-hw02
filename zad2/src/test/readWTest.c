@@ -8,11 +8,11 @@ int main (void) {
  file = fopen("file.bin", "rb");
  
  if(file == NULL)
-   printf("File does not exist!");
+   printf("\nFile does not exist!\n");
 
  value = read_word(file);
  fclose(file);
- printf("Read value: %d", value);
+ printf("\nRead value: %d\n", value);
  
  return 0;
 }

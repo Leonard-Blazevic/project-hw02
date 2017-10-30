@@ -10,7 +10,7 @@ int main (void) {
  file = fopen("file.bin", "wb+");
  
  if(file == NULL)
-   printf("File does not exist!");
+   printf("\nFile does not exist!\n");
 
  write_word(file, value);
  n = fread(&check, sizeof(short), 1, file);
@@ -19,7 +19,7 @@ int main (void) {
  if(n<1)
    printf("Error!");
  
- printf("Written value: %d", check);
+ printf("\nWritten value: %d\n", check);
 
  return 0;
 }
