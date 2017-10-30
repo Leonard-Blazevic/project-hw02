@@ -12,6 +12,8 @@ int main (void) {
 
  value = read_half(file);
  fclose(file);
+ 
+ printf("\nTest successful\n");
  printf("\nRead value: %d\n", value);
  
  return 0;

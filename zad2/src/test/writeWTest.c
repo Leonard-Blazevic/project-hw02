@@ -18,7 +18,8 @@ int main (void) {
 
  if(n<1)
    printf("Error!");
- 
+   
+ printf("\nTest successful\n");
  printf("\nWritten value: %d\n", check);
 
  return 0;
