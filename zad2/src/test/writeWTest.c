@@ -3,22 +3,25 @@
 
 int main (void) {
  FILE *file;
- int n;
  int value = 32;
- int check;
+ int check = 0;
 
  file = fopen("file.bin", "wb+");
  
- if(file == NULL)
-   printf("\nFile does not exist!\n");
+ if(file == NULL) {
+ 	printf("\nFile does not exist!\n");
+ 	return -1;
+ }
 
  write_word(file, value);
- n = fread(&check, sizeof(short), 1, file);
+ fread(&check, sizeof(int), 1, file);
  fclose(file);
 
- if(n<1)
-   printf("Error!");
-   
+ if(check == 0) {
+ 	printf("Error!");
+ 	return -1;
+ }
+  
  printf("\nTest successful\n");
  printf("\nWritten value: %d\n", check);
 

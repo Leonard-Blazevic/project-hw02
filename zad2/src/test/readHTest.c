@@ -7,9 +7,11 @@ int main (void) {
 
  file = fopen("file.bin", "rb");
  
- if(file == NULL)
-   printf("\nFile does not exist!\n");
-
+ if(file == NULL) {
+ 	printf("\nFile does not exist!\n");
+ 	return -1;
+ }
+   
  value = read_half(file);
  fclose(file);
  
