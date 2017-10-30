@@ -12,7 +12,7 @@ int main (void) {
 
  value = read_word(file);
  fclose(file);
- printf("Read value: %d\n", value);
+ printf("Read value: %d", value);
  
  return 0;
 }
