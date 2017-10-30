@@ -1,5 +1,5 @@
 .SECONDARY:
 
 all:
-	cd zad1; make;
-	cd zad2; make;
+	cd zad1; mkdir exe; make;
+	cd zad2; mkdir exe; make;
